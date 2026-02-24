@@ -1,0 +1,940 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Relief and Live | Muscle Balms • Antifungal • Vein Balms</title>
+  <meta name="description" content="Relief and Live offers muscle balms, antifungal care, and vein balms to support comfort and everyday wellness." />
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#121b2f;
+      --muted:#a8b3cf;
+      --text:#ecf1ff;
+      --brand:#6ee7ff;
+      --brand2:#a78bfa;
+      --ok:#34d399;
+      --danger:#fb7185;
+      --border:rgba(255,255,255,.10);
+      --shadow: 0 18px 50px rgba(0,0,0,.35);
+      --radius:18px;
+      --radius2:24px;
+      --max:1100px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:var(--sans);
+      background:
+        radial-gradient(900px 500px at 10% 0%, rgba(110,231,255,.20), transparent 60%),
+        radial-gradient(800px 500px at 95% 10%, rgba(167,139,250,.16), transparent 55%),
+        linear-gradient(180deg, #070b14, var(--bg));
+      color:var(--text);
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:24px}
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:14px;
+      padding:14px 18px;
+      border:1px solid var(--border);
+      background:rgba(18,27,47,.65);
+      backdrop-filter: blur(10px);
+      border-radius:var(--radius2);
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 12px;
+      z-index: 50;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px; text-decoration:none;
+    }
+    .logo{
+      width:44px; height:44px; border-radius:14px;
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      box-shadow: 0 12px 30px rgba(110,231,255,.20);
+      display:grid; place-items:center;
+      font-weight:900;
+      color:#071022;
+      letter-spacing:.5px;
+    }
+    .brand h1{font-size:16px; margin:0; line-height:1.1}
+    .brand small{display:block; color:var(--muted); margin-top:2px; font-weight:500}
+    .navlinks{
+      display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end;
+    }
+    .chip{
+      text-decoration:none;
+      padding:10px 12px;
+      border:1px solid var(--border);
+      border-radius:999px;
+      background:rgba(255,255,255,.04);
+      color:var(--text);
+      font-weight:650;
+      font-size:13px;
+    }
+    .chip:hover{border-color:rgba(255,255,255,.22); background:rgba(255,255,255,.06)}
+    .hero{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    .panel{
+      border:1px solid var(--border);
+      background:rgba(18,27,47,.55);
+      backdrop-filter: blur(10px);
+      border-radius:var(--radius2);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .heroLeft{padding:26px}
+    .kicker{
+      display:inline-flex; gap:10px; align-items:center;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.05);
+      color:var(--muted);
+      font-size:13px;
+      font-weight:650;
+    }
+    .dot{width:9px; height:9px; border-radius:99px; background:var(--ok); box-shadow:0 0 0 6px rgba(52,211,153,.13)}
+    .hero h2{
+      font-size:42px;
+      line-height:1.05;
+      margin:14px 0 10px;
+      letter-spacing:-.8px;
+    }
+    .hero p{
+      margin:0;
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.6;
+      max-width:58ch;
+    }
+    .ctaRow{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
+    .btn{
+      border:none;
+      cursor:pointer;
+      padding:12px 14px;
+      border-radius:14px;
+      font-weight:800;
+      letter-spacing:.2px;
+      font-size:14px;
+      text-decoration:none;
+      display:inline-flex; align-items:center; gap:10px;
+    }
+    .btnPrimary{
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      color:#06101f;
+      box-shadow: 0 16px 30px rgba(110,231,255,.12);
+    }
+    .btnPrimary:hover{filter:brightness(1.04)}
+    .btnGhost{
+      background: rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.12);
+      color: var(--text);
+    }
+    .btnGhost:hover{background: rgba(255,255,255,.09)}
+    .heroRight{
+      padding:0;
+      display:flex;
+      flex-direction:column;
+    }
+    .heroCardTop{
+      padding:18px 18px 12px;
+      border-bottom:1px solid var(--border);
+    }
+    .statRow{display:grid; grid-template-columns:repeat(3, 1fr); gap:10px; margin-top:12px}
+    .stat{
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.05);
+      border-radius:16px;
+      padding:12px;
+    }
+    .stat b{display:block; font-size:18px}
+    .stat span{color:var(--muted); font-size:12px; font-weight:650}
+    .heroCardBottom{
+      padding:16px 18px 18px;
+      display:grid; gap:10px;
+    }
+    .badge{
+      display:flex; gap:10px; align-items:flex-start;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.04);
+      padding:12px;
+      border-radius:16px;
+    }
+    .badgeIcon{
+      width:36px; height:36px; border-radius:14px;
+      display:grid; place-items:center;
+      background:rgba(110,231,255,.10);
+      border:1px solid rgba(110,231,255,.20);
+      flex:0 0 auto;
+    }
+    .badge h4{margin:0; font-size:13px}
+    .badge p{margin:2px 0 0; color:var(--muted); font-size:12.5px; line-height:1.45}
+
+    section{margin-top:22px}
+    .sectionHead{
+      display:flex; justify-content:space-between; align-items:flex-end; gap:12px; flex-wrap:wrap;
+      margin-bottom:12px;
+    }
+    .sectionHead h3{margin:0; font-size:22px}
+    .sectionHead p{margin:0; color:var(--muted); max-width:70ch; line-height:1.6}
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+    }
+    .card{
+      padding:16px;
+      border:1px solid var(--border);
+      background:rgba(18,27,47,.55);
+      backdrop-filter: blur(10px);
+      border-radius:var(--radius2);
+      box-shadow: var(--shadow);
+    }
+    .pill{
+      display:inline-flex;
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(110,231,255,.10);
+      border:1px solid rgba(110,231,255,.20);
+      color:#c8f6ff;
+      font-weight:800;
+      font-size:12px;
+    }
+
+    /* Product image */
+    .productImg{
+      width:100%;
+      height:180px;
+      object-fit:cover;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.04);
+      margin:12px 0 12px;
+    }
+
+    .card h4{margin:10px 0 8px; font-size:16px}
+    .card p{margin:0; color:var(--muted); line-height:1.6; font-size:14px}
+    .features{margin:12px 0 0; padding:0; list-style:none; display:grid; gap:8px}
+    .features li{
+      display:flex; gap:10px; align-items:flex-start;
+      color:var(--text);
+      font-size:13px;
+      line-height:1.45;
+    }
+    .tick{
+      width:18px; height:18px; border-radius:6px;
+      background:rgba(52,211,153,.14);
+      border:1px solid rgba(52,211,153,.22);
+      display:grid; place-items:center; flex:0 0 auto;
+      font-family:var(--mono);
+      font-weight:900;
+      color:#a7ffdf;
+    }
+    .priceRow{
+      display:flex; justify-content:space-between; align-items:center; gap:10px;
+      margin-top:14px; padding-top:12px;
+      border-top:1px solid rgba(255,255,255,.08);
+    }
+    .price{
+      font-weight:900; font-size:16px;
+    }
+    .note{color:var(--muted); font-size:12px; font-weight:650}
+    .smallBtn{
+      padding:10px 12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.06);
+      color:var(--text);
+      font-weight:850;
+      cursor:pointer;
+      text-decoration:none;
+      display:inline-flex; gap:10px; align-items:center;
+      white-space:nowrap;
+    }
+    .smallBtn:hover{background:rgba(255,255,255,.10)}
+    .twoCol{display:grid; grid-template-columns: 1fr 1fr; gap:14px}
+    .faq details{
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.04);
+      border-radius:16px;
+      padding:12px 14px;
+    }
+    details summary{
+      cursor:pointer;
+      font-weight:850;
+      list-style:none;
+    }
+    details summary::-webkit-details-marker{display:none}
+    details p{margin:8px 0 0; color:var(--muted); line-height:1.6; font-size:14px}
+    .form{
+      display:grid; gap:10px;
+    }
+    label{font-size:13px; font-weight:800; color:var(--text)}
+    input, textarea, select{
+      width:100%;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(7,11,20,.55);
+      color:var(--text);
+      outline:none;
+      font-size:14px;
+    }
+    textarea{min-height:110px; resize:vertical}
+    .helper{color:var(--muted); font-size:12px; line-height:1.45}
+    .footer{
+      margin:24px 0 18px;
+      padding:16px;
+      border-radius:var(--radius2);
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(18,27,47,.45);
+      color:var(--muted);
+      font-size:12.5px;
+      line-height:1.6;
+      text-align:center;
+    }
+
+    /* Discussion / Reviews */
+    .reviewsTop{display:flex; gap:10px; flex-wrap:wrap; align-items:center; justify-content:space-between; margin-bottom:10px}
+    .reviewList{display:grid; gap:10px; margin-top:10px}
+    .reviewItem{
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.04);
+      border-radius:16px;
+      padding:12px 14px;
+    }
+    .reviewMeta{
+      display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;
+      color:var(--muted); font-size:12px; font-weight:700;
+      margin-bottom:6px;
+    }
+    .reviewText{margin:0; line-height:1.6; color:var(--text); font-size:14px}
+    .rowBtns{display:flex; gap:10px; flex-wrap:wrap}
+    .dangerBtn{
+      background:rgba(251,113,133,.12);
+      border:1px solid rgba(251,113,133,.28);
+    }
+    .dangerBtn:hover{background:rgba(251,113,133,.18)}
+    .whatsAppFloat{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      z-index:60;
+      border-radius:999px;
+      padding:12px 14px;
+      background:rgba(52,211,153,.14);
+      border:1px solid rgba(52,211,153,.28);
+      backdrop-filter: blur(10px);
+      text-decoration:none;
+      font-weight:900;
+      display:flex; align-items:center; gap:10px;
+      box-shadow: var(--shadow);
+    }
+    .waDot{width:10px; height:10px; border-radius:99px; background:var(--ok); box-shadow:0 0 0 6px rgba(52,211,153,.13)}
+    .mono{font-family:var(--mono)}
+    .divider{height:1px; background:rgba(255,255,255,.10); margin:12px 0}
+
+    /* Ingredients box */
+    .ingredients{
+      margin-top:12px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.04);
+      border-radius:16px;
+      padding:12px;
+    }
+    .ingredients h5{
+      margin:0 0 6px;
+      font-size:12px;
+      letter-spacing:.2px;
+      text-transform:uppercase;
+      color:var(--muted);
+    }
+    .ingredients p{
+      margin:0;
+      color:var(--text);
+      font-size:13px;
+      line-height:1.5;
+    }
+    .ingredients .mono{opacity:.95}
+
+    @media (max-width: 960px){
+      .hero{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr}
+      .twoCol{grid-template-columns:1fr}
+      .hero h2{font-size:36px}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header class="nav" aria-label="Primary">
+      <a class="brand" href="#top">
+        <div class="logo" aria-hidden="true">RL</div>
+        <div>
+          <h1>Relief and Live</h1>
+          <small>Muscle Balms • Antifungal • Vein Balms</small>
+        </div>
+      </a>
+
+      <nav class="navlinks" aria-label="Site">
+        <a class="chip" href="#products">Products</a>
+        <a class="chip" href="#how">How to Use</a>
+        <a class="chip" href="#faq">FAQ</a>
+        <a class="chip" href="#reviews">Discussion</a>
+        <a class="chip" href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="top" class="hero">
+      <section class="panel heroLeft" aria-label="Hero">
+        <div class="kicker"><span class="dot" aria-hidden="true"></span> Everyday comfort, made simple</div>
+        <h2>Feel better. Move easier. <br/>Relief and Live.</h2>
+        <p>
+          Shop our wellness balms designed to support your daily routine:
+          <b>Muscle Relief Balm</b>, <b>Antifungal Care Balm</b>, and <b>Vein Support Balm</b>.
+          All balms are packed in <b>2 oz mason jars</b>.
+        </p>
+
+        <div class="ctaRow">
+          <a class="btn btnPrimary" href="#products">Shop Products ➜</a>
+          <a class="btn btnGhost" href="#reviews">See Discussion 💬</a>
+        </div>
+
+        <p class="helper" style="margin-top:14px">
+          Disclaimer: This website provides general information only and is not medical advice.
+          If symptoms persist or worsen, consult a healthcare professional.
+        </p>
+      </section>
+
+      <aside class="panel heroRight" aria-label="Highlights">
+        <div class="heroCardTop">
+          <b style="font-size:14px">Quick Highlights</b>
+          <div class="statRow">
+            <div class="stat">
+              <b>3</b>
+              <span>Targeted balms</span>
+            </div>
+            <div class="stat">
+              <b>2 oz</b>
+              <span>Mason jars</span>
+            </div>
+            <div class="stat">
+              <b>EC$25</b>
+              <span>Each</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="heroCardBottom">
+          <div class="badge">
+            <div class="badgeIcon" aria-hidden="true">🧴</div>
+            <div>
+              <h4>Topical care</h4>
+              <p>Apply directly where needed for quick, focused support.</p>
+            </div>
+          </div>
+          <div class="badge">
+            <div class="badgeIcon" aria-hidden="true">🫙</div>
+            <div>
+              <h4>2 oz mason jars</h4>
+              <p>Compact, reusable jars—perfect for home, work, or travel.</p>
+            </div>
+          </div>
+          <div class="badge">
+            <div class="badgeIcon" aria-hidden="true">💬</div>
+            <div>
+              <h4>Community discussion</h4>
+              <p>Ask questions and share experiences on the Discussion section.</p>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <section id="products">
+      <div class="sectionHead">
+        <div>
+          <h3>Our Products</h3>
+          <p>All products are <b>EC$25.00 each</b> (2 oz mason jars).</p>
+        </div>
+      </div>
+
+      <div class="grid">
+        <article class="card" aria-label="Muscle Relief Balm">
+          <span class="pill">Muscle Balm</span>
+
+          <!-- Upload your AI image to your repo as: images/balms-2oz-mason-jars.png -->
+          <img class="productImg" src="images/balms-2oz-mason-jars.png" alt="2 oz mason jars of Relief and Live balms">
+
+          <h4>Muscle Relief Balm</h4>
+          <p>Designed for everyday comfort after exercise, long shifts, or general stiffness.</p>
+
+          <ul class="features">
+            <li><span class="tick">✓</span> Great for post-workout or long-day fatigue</li>
+            <li><span class="tick">✓</span> Smooth, easy application</li>
+            <li><span class="tick">✓</span> Ideal for back, shoulders, legs</li>
+          </ul>
+
+          <div class="ingredients">
+            <h5>Ingredients</h5>
+            <p class="mono">Cayenne, Ginger, Clove, Coconut Oil, Beeswax, Vitamin E</p>
+          </div>
+
+          <div class="priceRow">
+            <div>
+              <div class="price">EC$25.00</div>
+              <div class="note">2 oz mason jar</div>
+            </div>
+            <button class="smallBtn" onclick="addToCart('Muscle Relief Balm', 25)">Add to Cart</button>
+          </div>
+        </article>
+
+        <article class="card" aria-label="Antifungal Care Balm">
+          <span class="pill">Antifungal</span>
+
+          <img class="productImg" src="images/balms-2oz-mason-jars.png" alt="2 oz mason jars of Relief and Live balms">
+
+          <h4>Antifungal Care Balm</h4>
+          <p>Supportive topical care for common skin concerns. Keep skin clean and dry.</p>
+
+          <ul class="features">
+            <li><span class="tick">✓</span> Suitable for everyday hygiene routines</li>
+            <li><span class="tick">✓</span> Helps maintain skin comfort</li>
+            <li><span class="tick">✓</span> Works best with clean, dry skin</li>
+          </ul>
+
+          <div class="ingredients">
+            <h5>Ingredients</h5>
+            <p class="mono">Tea Tree, Lavender, Coconut Oil, Beeswax, Vitamin E</p>
+          </div>
+
+          <div class="priceRow">
+            <div>
+              <div class="price">EC$25.00</div>
+              <div class="note">2 oz mason jar</div>
+            </div>
+            <button class="smallBtn" onclick="addToCart('Antifungal Care Balm', 25)">Add to Cart</button>
+          </div>
+        </article>
+
+        <article class="card" aria-label="Vein Support Balm">
+          <span class="pill">Vein Balm</span>
+
+          <img class="productImg" src="images/balms-2oz-mason-jars.png" alt="2 oz mason jars of Relief and Live balms">
+
+          <h4>Vein Support Balm</h4>
+          <p>Created for tired legs and daily comfort. Pair with movement and hydration.</p>
+
+          <ul class="features">
+            <li><span class="tick">✓</span> Great after standing for long hours</li>
+            <li><span class="tick">✓</span> Massage-friendly texture</li>
+            <li><span class="tick">✓</span> Ideal for calves and feet</li>
+          </ul>
+
+          <div class="ingredients">
+            <h5>Ingredients</h5>
+            <p class="mono">Orange, Cypress, Ginger, Castor Oil, Coconut Oil, Beeswax, Vitamin E</p>
+          </div>
+
+          <div class="priceRow">
+            <div>
+              <div class="price">EC$25.00</div>
+              <div class="note">2 oz mason jar</div>
+            </div>
+            <button class="smallBtn" onclick="addToCart('Vein Support Balm', 25)">Add to Cart</button>
+          </div>
+        </article>
+      </div>
+
+      <div class="card" style="margin-top:14px">
+        <div class="sectionHead" style="margin:0">
+          <div>
+            <h3 style="font-size:18px; margin:0">Mini Cart</h3>
+            <p style="margin-top:6px">This is a simple demo cart stored in your browser. For real payments, connect Shopify/PayPal later.</p>
+          </div>
+          <div class="rowBtns">
+            <button class="smallBtn" onclick="clearCart()">Clear Cart</button>
+            <a class="smallBtn btnPrimary" style="text-decoration:none" href="#contact" onclick="prefillOrderMessage()">Checkout (Message Us)</a>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div id="cartArea" class="helper">Cart is empty.</div>
+      </div>
+    </section>
+
+    <section id="how" class="twoCol">
+      <div class="card">
+        <h3 style="margin:0 0 8px">How to Use</h3>
+        <p>
+          For topical use only. Apply a small amount to clean skin and massage gently.
+          Avoid contact with eyes and broken skin. Wash hands after use.
+        </p>
+        <ul class="features">
+          <li><span class="tick">✓</span> Use 1–2 times daily or as needed</li>
+          <li><span class="tick">✓</span> Stop use if irritation occurs</li>
+          <li><span class="tick">✓</span> Store in a cool, dry place</li>
+        </ul>
+        <p class="helper" style="margin-top:10px">
+          If you have a medical condition, are pregnant, or use prescription medication, ask a healthcare professional before use.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3 style="margin:0 0 8px">Why People Choose Relief and Live</h3>
+        <p>Simple products that fit real-life routines—work, home, gym, travel.</p>
+        <ul class="features">
+          <li><span class="tick">✓</span> Clear categories: Muscle • Antifungal • Vein</li>
+          <li><span class="tick">✓</span> Easy ordering via message</li>
+          <li><span class="tick">✓</span> Community discussion on this page</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="faq" class="twoCol">
+      <div class="card faq">
+        <div class="sectionHead" style="margin:0 0 10px">
+          <div>
+            <h3 style="margin:0">FAQ</h3>
+            <p style="margin-top:6px">Quick answers before you order.</p>
+          </div>
+        </div>
+
+        <details>
+          <summary>Do you list ingredients?</summary>
+          <p>Yes. Ingredients are shown inside each product card under “Ingredients.”</p>
+        </details>
+
+        <details>
+          <summary>Do you deliver?</summary>
+          <p>Yes—update this section with your delivery areas, fees, and delivery times.</p>
+        </details>
+
+        <details>
+          <summary>How do I place an order?</summary>
+          <p>Add items to the cart, then use “Checkout (Message Us)” to send your order request.</p>
+        </details>
+
+        <details>
+          <summary>Are these medical products?</summary>
+          <p>No. This site shares general wellness information, not medical advice. If you have concerns, consult a professional.</p>
+        </details>
+
+        <details>
+          <summary>Can I return items?</summary>
+          <p>Update this with your return policy (e.g., unopened items within 7 days, etc.).</p>
+        </details>
+      </div>
+
+      <div class="card" id="contact">
+        <div class="sectionHead" style="margin:0 0 10px">
+          <div>
+            <h3 style="margin:0">Contact / Order</h3>
+            <p style="margin-top:6px">Send us a message with what you want. We’ll confirm availability and delivery.</p>
+          </div>
+        </div>
+
+        <form class="form" onsubmit="sendMessage(event)">
+          <div>
+            <label for="name">Name</label>
+            <input id="name" name="name" placeholder="Your name" required />
+          </div>
+
+          <div>
+            <label for="phone">Phone / WhatsApp</label>
+            <input id="phone" name="phone" placeholder="+1 758 000 0000" />
+            <div class="helper">Tip: Use country code (Saint Lucia is +1 758).</div>
+          </div>
+
+          <div>
+            <label for="topic">Topic</label>
+            <select id="topic" name="topic">
+              <option>Order</option>
+              <option>Product Question</option>
+              <option>Delivery</option>
+              <option>Wholesale</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Type your order or question..." required></textarea>
+            <div class="helper">When you checkout, the cart items will be added here automatically.</div>
+          </div>
+
+          <button class="btn btnPrimary" type="submit">Send Message</button>
+          <div class="helper">
+            This demo uses your email app or WhatsApp link to send the message. Replace details below with your own contact info.
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section id="reviews" class="card" aria-label="Discussion">
+      <div class="reviewsTop">
+        <div>
+          <h3 style="margin:0 0 6px">Discussion (Customer Q&amp;A)</h3>
+          <div class="helper">This saves replies on this device/browser. For a real public comment system, connect Disqus/Facebook later.</div>
+        </div>
+        <div class="rowBtns">
+          <button class="smallBtn dangerBtn" onclick="clearReviews()">Clear All</button>
+        </div>
+      </div>
+
+      <form class="form" onsubmit="postReview(event)">
+        <div class="twoCol" style="gap:10px">
+          <div>
+            <label for="rName">Your Name</label>
+            <input id="rName" placeholder="e.g., Tanya" required />
+          </div>
+          <div>
+            <label for="rTopic">Topic</label>
+            <select id="rTopic">
+              <option>Muscle Balm</option>
+              <option>Antifungal Balm</option>
+              <option>Vein Balm</option>
+              <option>Delivery</option>
+              <option>General Question</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <label for="rText">Your Comment</label>
+          <textarea id="rText" placeholder="Ask a question or share your experience..." required></textarea>
+        </div>
+        <button class="btn btnGhost" type="submit">Post to Discussion</button>
+      </form>
+
+      <div class="divider"></div>
+      <div id="reviewList" class="reviewList" aria-live="polite"></div>
+    </section>
+
+    <footer class="footer">
+      <b>Relief and Live</b> — Muscle Balms • Antifungal • Vein Balms <br/>
+      <span class="mono">© <span id="year"></span></span> • Update this footer with your business address, hours, and policies.
+    </footer>
+  </div>
+
+  <!-- WhatsApp floating button (edit number below) -->
+  <a class="whatsAppFloat" id="waFloat" href="#" target="_blank" rel="noopener">
+    <span class="waDot" aria-hidden="true"></span> WhatsApp Us
+  </a>
+
+  <script>
+    // ====== CONFIG: Edit these ======
+    const STORE_NAME = "Relief and Live";
+    const WHATSAPP_NUMBER = "17584868965"; // Saint Lucia example: +1 758 486 8965 => "17584868965"
+    const ORDER_EMAIL = "orders@example.com"; // replace with your email
+    const CURRENCY = "EC$";
+
+    // ====== Cart (LocalStorage) ======
+    const CART_KEY = "rl_cart_v1";
+    const cartArea = document.getElementById("cartArea");
+
+    function getCart(){
+      try { return JSON.parse(localStorage.getItem(CART_KEY)) || []; }
+      catch { return []; }
+    }
+    function saveCart(items){
+      localStorage.setItem(CART_KEY, JSON.stringify(items));
+      renderCart();
+    }
+    function addToCart(name, price){
+      const cart = getCart();
+      const idx = cart.findIndex(i => i.name === name);
+      if (idx >= 0) cart[idx].qty += 1;
+      else cart.push({ name, price, qty: 1 });
+      saveCart(cart);
+      toast(`Added: ${name}`);
+    }
+    function clearCart(){
+      saveCart([]);
+      toast("Cart cleared");
+    }
+    function renderCart(){
+      const cart = getCart();
+      if (!cart.length){
+        cartArea.innerHTML = "Cart is empty.";
+        return;
+      }
+      let total = 0;
+      const rows = cart.map(item => {
+        total += item.price * item.qty;
+        return `
+          <div style="display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap; padding:6px 0">
+            <div><b>${escapeHtml(item.name)}</b> <span class="helper">x${item.qty}</span></div>
+            <div><span class="mono">${CURRENCY}${(item.price * item.qty).toFixed(2)}</span></div>
+          </div>
+        `;
+      }).join("");
+
+      cartArea.innerHTML = `
+        ${rows}
+        <div class="divider"></div>
+        <div style="display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;">
+          <div><b>Total</b></div>
+          <div><b class="mono">${CURRENCY}${total.toFixed(2)}</b></div>
+        </div>
+        <div class="helper" style="margin-top:8px">Checkout uses the message form below (no online payment in this demo).</div>
+      `;
+    }
+
+    function prefillOrderMessage(){
+      const cart = getCart();
+      const msg = document.getElementById("message");
+      if (!msg) return;
+      if (!cart.length) return;
+
+      const lines = cart.map(i => `- ${i.name} x${i.qty} (${CURRENCY}${i.price.toFixed(2)} each)`);
+      const total = cart.reduce((s,i)=>s + i.price*i.qty, 0);
+      msg.value =
+`Order Request (${STORE_NAME})
+Items:
+${lines.join("\n")}
+Total: ${CURRENCY}${total.toFixed(2)}
+
+Delivery address:
+Preferred delivery time:
+Notes:`;
+    }
+
+    // ====== Contact submit: Email ======
+    function sendMessage(e){
+      e.preventDefault();
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const topic = document.getElementById("topic").value;
+      const message = document.getElementById("message").value.trim();
+
+      const subject = encodeURIComponent(`${STORE_NAME} - ${topic} (${name})`);
+      const body = encodeURIComponent(`Name: ${name}\nPhone/WhatsApp: ${phone}\nTopic: ${topic}\n\nMessage:\n${message}`);
+
+      window.location.href = `mailto:${ORDER_EMAIL}?subject=${subject}&body=${body}`;
+    }
+
+    // ====== Discussion / Reviews (LocalStorage) ======
+    const REV_KEY = "rl_reviews_v1";
+    const reviewList = document.getElementById("reviewList");
+
+    function getReviews(){
+      try { return JSON.parse(localStorage.getItem(REV_KEY)) || []; }
+      catch { return []; }
+    }
+    function saveReviews(items){
+      localStorage.setItem(REV_KEY, JSON.stringify(items));
+      renderReviews();
+    }
+
+    function postReview(e){
+      e.preventDefault();
+      const name = document.getElementById("rName").value.trim();
+      const topic = document.getElementById("rTopic").value;
+      const text = document.getElementById("rText").value.trim();
+      if (!name || !text) return;
+
+      const item = {
+        id: cryptoRandomId(),
+        name,
+        topic,
+        text,
+        ts: new Date().toISOString()
+      };
+
+      const reviews = getReviews();
+      reviews.unshift(item);
+      saveReviews(reviews);
+
+      document.getElementById("rText").value = "";
+      toast("Posted to discussion");
+    }
+
+    function deleteReview(id){
+      const reviews = getReviews().filter(r => r.id !== id);
+      saveReviews(reviews);
+      toast("Removed");
+    }
+
+    function clearReviews(){
+      localStorage.removeItem(REV_KEY);
+      renderReviews();
+      toast("Discussion cleared");
+    }
+
+    function renderReviews(){
+      const reviews = getReviews();
+      if (!reviews.length){
+        reviewList.innerHTML = `<div class="helper">No posts yet. Be the first to ask a question.</div>`;
+        return;
+      }
+      reviewList.innerHTML = reviews.map(r => {
+        const date = new Date(r.ts);
+        return `
+          <div class="reviewItem">
+            <div class="reviewMeta">
+              <div><b>${escapeHtml(r.name)}</b> • <span class="mono">${escapeHtml(r.topic)}</span></div>
+              <div>${date.toLocaleString()}</div>
+            </div>
+            <p class="reviewText">${escapeHtml(r.text)}</p>
+            <div style="margin-top:10px">
+              <button class="smallBtn dangerBtn" onclick="deleteReview('${r.id}')">Delete</button>
+            </div>
+          </div>
+        `;
+      }).join("");
+    }
+
+    // ====== WhatsApp floating link ======
+    function setWhatsAppLink(){
+      const link = document.getElementById("waFloat");
+      const text = encodeURIComponent(`Hi ${STORE_NAME}! I want to place an order (EC$25 each).`);
+      link.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
+    }
+
+    // ====== Small helpers ======
+    function escapeHtml(str){
+      return String(str)
+        .replaceAll("&","&amp;")
+        .replaceAll("<","&lt;")
+        .replaceAll(">","&gt;")
+        .replaceAll('"',"&quot;")
+        .replaceAll("'","&#039;");
+    }
+    function cryptoRandomId(){
+      return Math.random().toString(16).slice(2) + Date.now().toString(16);
+    }
+    function toast(msg){
+      const t = document.createElement("div");
+      t.textContent = msg;
+      t.style.position = "fixed";
+      t.style.left = "50%";
+      t.style.bottom = "86px";
+      t.style.transform = "translateX(-50%)";
+      t.style.padding = "10px 12px";
+      t.style.borderRadius = "14px";
+      t.style.background = "rgba(0,0,0,.45)";
+      t.style.border = "1px solid rgba(255,255,255,.18)";
+      t.style.backdropFilter = "blur(10px)";
+      t.style.color = "white";
+      t.style.fontWeight = "800";
+      t.style.zIndex = "9999";
+      document.body.appendChild(t);
+      setTimeout(()=> t.remove(), 1600);
+    }
+
+    // Init
+    document.getElementById("year").textContent = new Date().getFullYear();
+    setWhatsAppLink();
+    renderCart();
+    renderReviews();
+  </script>
+</body>
+</html>
